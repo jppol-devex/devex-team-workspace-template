@@ -10,7 +10,7 @@ Based on the recommendation from DevEx' team rollout ("Your workspace").
 |---|---|
 | `CLAUDE.md` | Agent instructions: repo map and rules |
 | `.claude/settings.json` | Shared settings, including which marketplace skills the team uses |
-| `wiki/` | Shared knowledge and notes |
+| `docs/` | Shared knowledge and notes |
 | `repositories/` | The team's repos, cloned in as needed (gitignored) |
 
 ## Getting started

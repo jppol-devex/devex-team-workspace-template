@@ -11,5 +11,5 @@ Clone a missing repo to its path. Use a worktree when another agent is already w
 ## Rules
 
 - Each repo in `repositories/` has its own history and PRs. Commit there, not here.
-- Read `wiki/` when you need team context.
+- Read `docs/` when you need team context.
 - Open PRs as drafts.
