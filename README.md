@@ -20,11 +20,10 @@ Based on the recommendation from DevEx' team rollout ("Your workspace").
 2. Add your repos to `CLAUDE.md`, plus any team agreements the agent must follow (review, tests, PR size). Keep it short: it loads into every session.
 3. Start the agent at the root of the workspace. It clones the repos it is missing.
 
-## Why not git submodules?
+## How repos are shared
 
-Submodules pin a commit, so the workspace needs a new commit every time a repo changes.
-They cause detached HEADs, work poorly with worktrees, and everyone has to fetch every repo.
-What is shared is the repo list in `CLAUDE.md`. Each person clones only what they work on.
+`repositories/` is gitignored. Each repo keeps its own history and PRs.
+The repo table in `CLAUDE.md` is what the team shares: the agent clones any repo it needs, so each person only has what they work on.
 
 ## Where does a skill belong?
 
