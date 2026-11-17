@@ -1,2 +1,3 @@
 repositories/*
 !repositories/.gitkeep
+.claude-sessions/
