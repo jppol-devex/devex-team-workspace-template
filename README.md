@@ -8,7 +8,7 @@ Based on the recommendation from DevEx' team rollout ("Your workspace").
 
 | Path | Purpose |
 |---|---|
-| `CLAUDE.md` | Map of the team's repos and team agreements |
+| `CLAUDE.md` | Agent instructions: repo map and rules |
 | `.claude/skills/` | Team skills (across the team's repos) |
 | `.claude/settings.json` | Shared, versioned Claude Code settings |
 | `wiki/` | Shared knowledge and notes |
@@ -17,7 +17,7 @@ Based on the recommendation from DevEx' team rollout ("Your workspace").
 ## Getting started
 
 1. Use "Use this template" on GitHub.
-2. Fill in "Team repos" and "Team agreements" in `CLAUDE.md`.
+2. Add your repos to `CLAUDE.md`, plus any team agreements the agent must follow (review, tests, PR size). Keep it short: it loads into every session.
 3. Start the agent at the root of the workspace. It clones the repos it is missing.
 
 ## Why not git submodules?
