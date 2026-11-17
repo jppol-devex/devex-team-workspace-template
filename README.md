@@ -17,7 +17,7 @@ Based on the recommendation from DevEx' team rollout ("Your workspace").
 
 1. Use "Use this template" on GitHub.
 2. Add your repos to `CLAUDE.md`, plus any team agreements the agent must follow (review, tests, PR size). Keep it short: it loads into every session.
-3. Enable your team's plugins from jppol-skills-marketplace in `enabledPlugins` in `.claude/settings.json`.
+3. Enable your team's skills in `enabledPlugins` in `.claude/settings.json` as `<skill>@litellm`. The sandbox registers the LiteLLM skills gateway as the `litellm` marketplace; browse it with `/plugin`.
 4. Start the agent at the root of the workspace. It clones the repos it is missing.
 
 ## How repos are shared
@@ -31,7 +31,7 @@ The repo table in `CLAUDE.md` is what the team shares: the agent clones any repo
 |---|---|
 | Personal | `~/.claude/skills` |
 | Repo | `.claude/skills` in the repo itself |
-| Team and DUT | jppol-skills-marketplace, enabled in `.claude/settings.json` here |
+| Team and DUT | jppol-skills-marketplace, served by the LiteLLM skills gateway and enabled in `.claude/settings.json` here |
 
 Team skills live in the marketplace, so every team can find and reuse them.
 Start low, and move a skill up when more than one person needs it.
