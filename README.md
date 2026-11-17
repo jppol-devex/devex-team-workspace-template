@@ -1,38 +1,38 @@
 # Team workspace template
 
-Skabelon til et team-workspace (et "home repo"): det sted, teamets agent altid startes fra.
-Herfra arbejder agenten ud i teamets øvrige repos, med de samme skills, settings og aftaler for alle.
-Bygger på anbefalingen fra DevEx' team-udrulning ("Jeres workspace").
+Template for a team workspace (a "home repo"): the place the team's agent is always started from.
+From here the agent works across the team's other repos, with the same skills, settings and agreements for everyone.
+Based on the recommendation from DevEx' team rollout ("Your workspace").
 
-## Struktur
+## Structure
 
-| Sti | Formål |
+| Path | Purpose |
 |---|---|
-| `CLAUDE.md` | Landkort til teamets repos og team-aftaler |
-| `.claude/skills/` | Team-skills (på tværs af teamets repos) |
-| `.claude/settings.json` | Fælles, versionerede Claude Code-settings |
-| `wiki/` | Fælles viden og noter |
-| `repositories/` | Teamets repos, klonet ind efter behov (gitignored) |
+| `CLAUDE.md` | Map of the team's repos and team agreements |
+| `.claude/skills/` | Team skills (across the team's repos) |
+| `.claude/settings.json` | Shared, versioned Claude Code settings |
+| `wiki/` | Shared knowledge and notes |
+| `repositories/` | The team's repos, cloned in as needed (gitignored) |
 
-## Kom i gang
+## Getting started
 
-1. Brug "Use this template" på GitHub.
-2. Udfyld "Teamets repos" og "Team-aftaler" i `CLAUDE.md`.
-3. Start agenten i roden af workspace. Den kloner de repos, den mangler.
+1. Use "Use this template" on GitHub.
+2. Fill in "Team repos" and "Team agreements" in `CLAUDE.md`.
+3. Start the agent at the root of the workspace. It clones the repos it is missing.
 
-## Hvorfor ikke git submodules?
+## Why not git submodules?
 
-Submodules låser til et commit, så workspace skal have et nyt commit, hver gang et repo ændrer sig.
-De giver detached HEAD og spiller dårligt sammen med worktrees, og alle skal hente alle repos.
-Det fælles er listen over repos i `CLAUDE.md`. Hver person kloner kun det, hen arbejder i.
+Submodules pin a commit, so the workspace needs a new commit every time a repo changes.
+They cause detached HEADs, work poorly with worktrees, and everyone has to fetch every repo.
+What is shared is the repo list in `CLAUDE.md`. Each person clones only what they work on.
 
-## Hvor hører en skill hjemme?
+## Where does a skill belong?
 
-| Niveau | Sted |
+| Level | Location |
 |---|---|
-| Personlig | `~/.claude/skills` |
-| Repo | `.claude/skills` i repoet selv |
-| Team | `.claude/skills` her |
+| Personal | `~/.claude/skills` |
+| Repo | `.claude/skills` in the repo itself |
+| Team | `.claude/skills` here |
 | DUT | jppol-skills-marketplace |
 
-Start lavt, og flyt en skill op, når mere end én har brug for den.
+Start low, and move a skill up when more than one person needs it.

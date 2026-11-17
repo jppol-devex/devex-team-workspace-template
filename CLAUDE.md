@@ -1,35 +1,35 @@
 # CLAUDE.md
 
-Fælles instruktioner til agenten i dette workspace. Tilpas til jeres team. Ændringer går via PR.
+Shared instructions for the agent in this workspace. Adapt them to your team. Changes go through PRs.
 
 ## Workspace
 
-- Start altid agenten i roden af dette workspace.
-- `repositories/`: uafhængige git-repos med egen historik og eget PR-flow. Mappen er gitignored.
-- `wiki/`: fælles viden på tværs af repos. Læs ved behov.
-- `.claude/skills/`: team-skills. Repo-specifikke skills ligger i repoet selv, og skills for hele DUT ligger i marketplace.
+- Always start the agent at the root of this workspace.
+- `repositories/`: independent git repos, each with its own history and PR flow. Gitignored.
+- `wiki/`: shared knowledge across repos. Read when needed.
+- `.claude/skills/`: team skills. Repo-specific skills live in the repo itself; skills for all of DUT live in the marketplace.
 
-## Teamets repos
+## Team repos
 
-Mangler et repo lokalt, så klon det til stien. Kør flere agenter, så brug en worktree i repoet.
+If a repo is missing locally, clone it to its path. When several agents run at once, use a worktree in the repo.
 
-| Repo | Sti | Git | Hvad |
+| Repo | Path | Git | What |
 |---|---|---|---|
-| <navn> | `repositories/<navn>` | `git@github.com:jppol/<navn>.git` | <én linje> |
+| <name> | `repositories/<name>` | `git@github.com:jppol/<name>.git` | <one line> |
 
-Ved mange repos: gruppér tabellen (frontend, backend, internt).
+With many repos, group the table (frontend, backend, internal).
 
-## Team-aftaler
+## Team agreements
 
-Udfyldes af teamet. Se `wiki/` for detaljer.
+To be filled in by the team. See `wiki/` for details.
 
-- Review af AI-kode: <fx den, der åbner PR'en, ejer koden fuldt ud>
-- Krav før merge: <fx tests og grøn CI>
-- PR-størrelse: <fx små PR'er, atomare commits>
+- Reviewing AI code: <e.g. whoever opens the PR fully owns the code>
+- Required before merge: <e.g. tests and green CI>
+- PR size: <e.g. small PRs, atomic commits>
 
-## Arbejdsregler
+## Working rules
 
-- Nye PR'er åbnes som drafts.
-- Hold historikken ren: atomare commits.
-- Skriv kort og præcist.
-- Ingen secrets i workspace. Proxyen injicerer dem.
+- Open new PRs as drafts.
+- Keep history clean: atomic commits.
+- Write short and to the point.
+- No secrets in the workspace. The proxy injects them.

@@ -1,4 +1,4 @@
 # Wiki
 
-Fælles viden for teamet: beslutninger, noter og guides på tværs af repos.
-Agenten læser herfra ved behov, så hold `CLAUDE.md` tynd og læg detaljer her.
+Shared team knowledge: decisions, notes and guides across repos.
+The agent reads from here when needed, so keep `CLAUDE.md` thin and put details here.
