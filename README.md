@@ -1,23 +1,38 @@
 # Team workspace template
 
-Skabelon til et team-workspace, som Claude Code (og andre agenter) kan arbejde i.
-Bygger på anbefalingen fra DevEx' team-udrulning ("Jeres workspace").
+Template for a team workspace (a "home repo"): the place the team's agent is always started from.
+From here the agent works across the team's other repos, with the same skills, settings and agreements for everyone.
+Based on the recommendation from DevEx' team rollout ("Your workspace").
 
-## Struktur
+## Structure
 
-| Sti | Formål |
+| Path | Purpose |
 |---|---|
-| `repositories/` | Uafhængige git-repos, ét pr. projekt (klones hertil, ikke committet her) |
-| `documentation/` | Fælles dokumentation og noter |
-| `CLAUDE.md` | Instruktioner til agenten, fælles for teamet |
+| `CLAUDE.md` | Agent instructions: repo map and rules |
+| `.claude/skills/` | Team skills (across the team's repos) |
+| `.claude/settings.json` | Shared, versioned Claude Code settings |
+| `wiki/` | Shared knowledge and notes |
+| `repositories/` | The team's repos, cloned in as needed (gitignored) |
 
-## Kom i gang
+## Getting started
 
-1. Brug "Use this template" på GitHub, eller klon og fjern `.git`.
-2. Tilpas `CLAUDE.md` til jeres team.
-3. Klon jeres repos ind i `repositories/`.
-4. Installer skills: `/plugin marketplace add <marketplace-repo>` og `/plugin install <skill>@<marketplace>`.
+1. Use "Use this template" on GitHub.
+2. Add your repos to `CLAUDE.md`, plus any team agreements the agent must follow (review, tests, PR size). Keep it short: it loads into every session.
+3. Start the agent at the root of the workspace. It clones the repos it is missing.
 
-## Status
+## Why not git submodules?
 
-Under udvikling. Tanken er at udvide med mere end skelettet (skills, konventioner, eksempler).
+Submodules pin a commit, so the workspace needs a new commit every time a repo changes.
+They cause detached HEADs, work poorly with worktrees, and everyone has to fetch every repo.
+What is shared is the repo list in `CLAUDE.md`. Each person clones only what they work on.
+
+## Where does a skill belong?
+
+| Level | Location |
+|---|---|
+| Personal | `~/.claude/skills` |
+| Repo | `.claude/skills` in the repo itself |
+| Team | `.claude/skills` here |
+| DUT | jppol-skills-marketplace |
+
+Start low, and move a skill up when more than one person needs it.

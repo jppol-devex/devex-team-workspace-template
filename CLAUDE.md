@@ -1,14 +1,15 @@
 # CLAUDE.md
 
-Fælles instruktioner til agenten i dette workspace. Tilpas til jeres team.
+## Repos
 
-## Workspace
+Clone a missing repo to its path. Use a worktree when another agent is already working in it.
 
-- `repositories/`: uafhængige git-repos. Hvert repo har sin egen historik og PR-flow.
-- `documentation/`: fælles noter og dokumentation på tværs af repos.
+| Repo | Path | Git |
+|---|---|---|
+| <name> | `repositories/<name>` | `git@github.com:jppol/<name>.git` |
 
-## Arbejdsregler
+## Rules
 
-- Nye PRs åbnes som drafts.
-- Hold historikken ren: atomare commits.
-- Skriv kort og præcist.
+- Each repo in `repositories/` has its own history and PRs. Commit there, not here.
+- Read `wiki/` when you need team context.
+- Open PRs as drafts.
