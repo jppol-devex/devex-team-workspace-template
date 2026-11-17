@@ -9,8 +9,7 @@ Based on the recommendation from DevEx' team rollout ("Your workspace").
 | Path | Purpose |
 |---|---|
 | `CLAUDE.md` | Agent instructions: repo map and rules |
-| `.claude/skills/` | Team skills (across the team's repos) |
-| `.claude/settings.json` | Shared, versioned Claude Code settings |
+| `.claude/settings.json` | Shared settings, including which marketplace skills the team uses |
 | `wiki/` | Shared knowledge and notes |
 | `repositories/` | The team's repos, cloned in as needed (gitignored) |
 
@@ -18,7 +17,8 @@ Based on the recommendation from DevEx' team rollout ("Your workspace").
 
 1. Use "Use this template" on GitHub.
 2. Add your repos to `CLAUDE.md`, plus any team agreements the agent must follow (review, tests, PR size). Keep it short: it loads into every session.
-3. Start the agent at the root of the workspace. It clones the repos it is missing.
+3. Enable your team's plugins from jppol-skills-marketplace in `enabledPlugins` in `.claude/settings.json`.
+4. Start the agent at the root of the workspace. It clones the repos it is missing.
 
 ## How repos are shared
 
@@ -31,7 +31,7 @@ The repo table in `CLAUDE.md` is what the team shares: the agent clones any repo
 |---|---|
 | Personal | `~/.claude/skills` |
 | Repo | `.claude/skills` in the repo itself |
-| Team | `.claude/skills` here |
-| DUT | jppol-skills-marketplace |
+| Team and DUT | jppol-skills-marketplace, enabled in `.claude/settings.json` here |
 
+Team skills live in the marketplace, so every team can find and reuse them.
 Start low, and move a skill up when more than one person needs it.
